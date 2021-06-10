@@ -81,16 +81,135 @@
 
 // }
 
-for (let contador = 2; contador <= 100; contador++) {
-  let esPrimo = false;
+// for (let contador = 2; contador <= 100; contador++) {
+//   let esPrimo = false;
 
-  for (let i = 2; i <= contador; i++) {
-    if (contador % i !== 0 && i === contador) {
-      esPrimo = true
-    }
+//   for (let i = 2; i <= contador; i++) {
+//     if (contador % i !== 0 && i === contador) {
+//       esPrimo = true
+//     }
+//   }
+
+//   if (esPrimo) {
+//     console.log(contador)
+//   }
+// }
+
+
+// Ejercicio de la sesión 3
+
+// function calcularEdad(birthYear) {
+//   let edad = 2021 - birthYear;
+//   return edad;
+// }
+
+// const edadJuan = calcularEdad(1995)
+
+// const edadPedro = calcularEdad(1964)
+
+// console.log(edadJuan)
+// console.log(edadPedro)
+
+// function yearUntilRetirement(year, name) {
+//   let age = calcularEdad(year);
+//   let retirement = 65 - age;
+//   console.log(name + ' retires in ' + retirement + ' years');
+// }
+
+// yearUntilRetirement(1995, 'Pedro')
+
+// function power(base, exponent) {
+//   let result = 1;
+
+//   for(let i = 0; i < exponent; i++) {
+//     // console.log('index', i)
+//     result *= base
+//     // console.log('resultado', result)
+//   }
+
+//   return result
+// }
+
+// let exponential = power(3, 5);
+
+// console.log(exponential);
+
+// const queHacesTu = function(job, name) {
+//   switch(job) {
+//     case 'developer':
+//       return name + ' desarrolla aplicaciones chidas'
+//     case 'designer':
+//       return name + ' diseña sitios increibles'
+//     case 'otro':
+//       return name + ' no se esta divirtiendo como debe'
+//     default:
+//       return name + ' no esta en la fiesta del desarrollo'
+//   }
+// }
+
+// console.log(queHacesTu('developer', 'Pedro'))
+// console.log(queHacesTu('designer', 'Gabriela'))
+// console.log(queHacesTu('', 'Patricia'))
+
+
+// let factorial = function fac(number) {
+//   return number < 2 ? 1 : number * fac(number - 1);
+// }
+
+// console.log(factorial(3))
+// let name = "Pedro";
+
+// (function nombre() {
+//   let name = 'Juan'
+//   console.log(name)
+// })()
+
+// console.log(name)
+// function obtenerNumeroMayor(num1, num2) {
+
+//   if (num1 > num2) {
+//     return 'el numero mayor es: ' + num1;
+//   } else if (num2 > num1) {
+//     return 'el numero mayor es: ' + num2;
+//   } else {
+//     return 'Los numeros son iguales'
+//   }
+// }
+
+// console.log(obtenerNumeroMayor(4, 2))
+
+// 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89
+function fibonacci(numero) {
+  if (numero <= 1) {
+    return 1;
   }
 
-  if (esPrimo) {
-    console.log(contador)
+  return fibonacci(numero - 1) + fibonacci(numero - 2);
+}
+
+
+function fibonacciSequence(limit) {
+  if (limit < 1) return console.log('Limite debe ser mayor que 0')
+
+  for(let i = 0; i < limit; i++) {
+    console.log(fibonacci(i))
   }
 }
+
+fibonacciSequence(11)
+
+// function fibonacci(num){
+//   let a = 1, b = 0, temp;
+
+//   while (num >= 0) {
+//     num--;
+//     temp = a;
+//     a = a + b;
+//     b = temp;
+//     console.log(b)
+//   }
+
+//   return b;
+// }
+
+// fibonacci(11)
