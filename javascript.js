@@ -179,24 +179,24 @@
 // console.log(obtenerNumeroMayor(4, 2))
 
 // 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89
-function fibonacci(numero) {
-  if (numero <= 1) {
-    return 1;
-  }
+// function fibonacci(numero) {
+//   if (numero <= 1) {
+//     return 1;
+//   }
 
-  return fibonacci(numero - 1) + fibonacci(numero - 2);
-}
+//   return fibonacci(numero - 1) + fibonacci(numero - 2);
+// }
 
 
-function fibonacciSequence(limit) {
-  if (limit < 1) return console.log('Limite debe ser mayor que 0')
+// function fibonacciSequence(limit) {
+//   if (limit < 1) return console.log('Limite debe ser mayor que 0')
 
-  for(let i = 0; i < limit; i++) {
-    console.log(fibonacci(i))
-  }
-}
+//   for(let i = 0; i < limit; i++) {
+//     console.log(fibonacci(i))
+//   }
+// }
 
-fibonacciSequence(11)
+// fibonacciSequence(11)
 
 // function fibonacci(num){
 //   let a = 1, b = 0, temp;
@@ -213,3 +213,179 @@ fibonacciSequence(11)
 // }
 
 // fibonacci(11)
+
+//
+
+// Ejercicios sesion 4 Arreglos y Objetos
+
+// let numeros = [1, 3, 4, 7, 2, 1, 9, 0]  // Arreglo inicial
+
+// function multiplicarPorDos(nums) {
+//   let numerosMultiplicados = [];
+
+//   for(let i = 0; i < nums.length; i++) {
+//     numerosMultiplicados.push(nums[i] * 2)
+//     // console.log(numerosMultiplicados)
+//   }
+
+//   return numerosMultiplicados;
+// }
+
+// console.log(numeros)
+
+
+// console.log(multiplicarPorDos(numeros))  // [2, 6, 8, 14, 4, 2, 18, 0]  // Resultado esperado
+
+
+// function promedio(nums) {
+//   let suma = 0;
+
+//   for(let i = 0; i < nums.length; i++) {
+//     suma += nums[i]
+//   }
+
+//   return suma / nums.length
+// }
+
+// function promedioVersionA(nums) {
+//   let suma = 0;
+
+//   nums.map(elem => suma += elem)
+
+//   return suma / nums.length
+// }
+
+// console.log('promedio de numeros', promedio(numeros))
+// console.log('promedio de numeros', promedioVersionA(numeros))
+// console.log('promedio de numerosPorDos', promedio(multiplicarPorDos(numeros)))
+
+// let car = {
+//   brand: 'Nissan',
+//   model: 'Versa',
+//   year: 2020
+// }
+
+// acceder al valor de una propiedad en un obbjeto
+// metodo punto   car.model
+// metodo con nombre  car['model']
+
+// function keyValuePairs (informacionAuto) {
+//   let keys = Object.keys(informacionAuto)
+//   let pairs = []  // aqui voy a ir armando mi información de resultado
+
+//   for(let i = 0; i < keys.length; i++) {
+//     pairs.push([keys[i], informacionAuto[keys[i]]])
+//   }
+
+//   return pairs;
+// }
+//  [
+//     ['brand', 'Nissan'], 
+//     ['model', 'Versa'], 
+//     ['year', 2020]
+//   ] // resultado esperado
+
+// console.log(keyValuePairs(car));
+
+
+
+
+// function arrayToObject(arr) {
+//   let objeto = {}
+
+//   for( let i = 0; i < arr.length; i++) {
+//     objeto[arr[i][0]] = arr[i][1]
+//   }
+
+//   return objeto
+// }
+
+// console.log(arrayToObject(keyValuePairs(car)))
+
+// let conejo = {
+//   alto: 25,
+//   velocidad: 10,
+//   color: 'blanco',
+//   genero: 'hembra',
+//   vertebrado: true,
+//   come: function(comida) {
+//     console.log('estoy comiendo ' + comida)
+//   }
+// }
+
+// let juan = {
+//   firstName: 'Juan',
+//   lastName: 'Perez',
+//   birthYear: 1990,
+//   calculateAge: function() {
+//     let today = new Date();
+//     let year = today.getFullYear();
+
+//     this.age = year - this.birthYear;
+//   }
+// }
+
+
+// let singers = [
+//   { name: 'Steven Tyler', band: 'Aerosmith', born: 1948 },
+//   { name: 'Karen Carpenter', band: 'The Carpenters', born: 1950 },
+//   { name: 'Kurt Cobain', band: 'Nirvana', born: 1967 },
+//   { name: 'Chris Cornell', band: 'Soundgarden', born: 1964 },
+// ];
+
+// function pluck(list, propertyName) {
+//   let values = []
+
+//   for(let i = 0; i < list.length; i++) {
+//     values.push(list[i][propertyName]);
+//   }
+
+//   return values;
+// }
+
+// console.log( pluck(singers, 'name') );
+// // ["Steven Tyler", "Karen Carpenter", "Kurt Cobain", "Chris Cornell"]
+
+// console.log( pluck(singers, 'band') );
+// // ["Aerosmith", "The Carpenters", "Nirvana", "Soundgarden"]
+
+// console.log( pluck(singers, 'born') );
+// // [1948, 1950, 1967, 1964]
+
+
+// let singersGenero = [
+//   { name: 'Steven Tyler', band: 'Aerosmith', born: 1948 },
+//   { name: 'Karen Carpenter', band: 'The Carpenters', born: 1950 },
+//   { name: 'Kurt Cobain', band: 'Nirvana', born: 1967 },
+//   { name: 'Chris Cornell', band: 'Soundgarden', born: 1964 },
+//   { name: 'Chris Cornell', band: 'Soundgarden', born: 1964 },
+//   { name: 'Chris Cornell', band: 'Soundgarden', born: 1964 },
+//   { name: 'Chris Cornell', band: 'Soundgarden', born: 1964 },
+//   'rock' // singersGenero[singerGenero.length - 1]
+// ];
+
+
+// function agregaGenero(list) {
+//   let genero = []
+
+//   for(let i = 0; i < list.length - 1; i++) {
+//     list[i].genero = list[list.length - 1]
+//     genero.push(list[i])
+//   }
+
+//   return genero;
+// }
+
+// console.log(agregaGenero(singersGenero))
+
+
+// resultado
+// [
+//   { name: 'Steven Tyler', band: 'Aerosmith', born: 1948, genero: 'rock' },
+//   { name: 'Karen Carpenter', band: 'The Carpenters', born: 1950, genero: 'rock' },
+//   { name: 'Kurt Cobain', band: 'Nirvana', born: 1967, genero: 'rock' },
+//   { name: 'Chris Cornell', band: 'Soundgarden', born: 1964, genero: 'rock' },
+// ];
+
+//
+// Ejercicios lección 6 
