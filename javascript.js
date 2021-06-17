@@ -388,4 +388,149 @@
 // ];
 
 //
-// Ejercicios lección 6 
+// Ejercicios lección 6   **************************************
+//
+//
+
+// let juan = {
+//   name: 'Juan',
+//   birthYear: 1990,
+//   job: 'Developer'
+// }
+
+// let pedro = {
+//   name: 'Pedro',
+//   birthYear: 1985,
+//   job: 'Developer'
+// }
+
+// let daniel = {
+//   name: 'Daniel',
+//   birthYear: 1995,
+//   job: 'Developer'
+// }
+
+// let Persona = function(name, birthYear, job) {
+//   this.name = name;
+//   this.birthYear = birthYear;
+//   this.job = job;
+// }
+
+// let juan = new Persona('Juan', 1990, 'Developer')
+// let pedro = new Persona('Pedro', 1985, 'Contador')
+// let daniel = new Persona('Daniel', 1985, 'MAestro')
+// console.log(juan, pedro, daniel)
+
+// let Vec = function(x, y) {
+//   this.x = x;
+//   this.y = y;
+// }
+
+// Vec.prototype.plus = function(otroVector) {
+//   return new Vec(this.x + otroVector.x, this.y + otroVector.y);
+// }
+
+// Vec.prototype.minus = function(otroVector) {
+//   return new Vec(this.x - otroVector.x, this.y - otroVector.y);
+// }
+
+// Vec.prototype.length = function () {
+//   return Math.sqrt(this.x * this.x + this.y * this.y);
+// }
+
+// let vec1 = new Vec(1, 2);
+// let vec2 = new Vec(2, 3);
+
+// console.log(vec1.plus(vec2)); // Vec { x: 3, y: 5 }
+// console.log(vec1.minus(vec2)); // Vec { x: -1, y: -1 }
+// console.log(vec1.length()); // 2.23606797749979
+
+// console.log(vec2.plus(vec1)); // Vec { x: 3, y: 5 }
+// console.log(vec2.minus(vec1)); // Vec { x: -1, y: -1 }
+// console.log(vec2.length()); // 2.23606797749979
+
+// let Persona = function(name) {
+//   this.name = name;
+// }
+
+
+// let Developer = function(name, skills, yearsOfExperience) {
+//   Persona.call(this, name)
+
+//   this.skills = skills;
+//   this.yearsOfExperience = yearsOfExperience;
+// }
+
+// let juan = new Developer('Juan', 'JAvascript', 10);
+// let pedro = new Persona('Pedro')
+// console.log(juan, pedro)
+
+// let Group = function() {
+//   this.members = [];
+// }
+
+// Group.prototype.has = function(valor) {
+//   return this.members.includes(valor)
+// }
+
+// Group.prototype.add = function(valor) {
+//   if(!this.has(valor)) {
+//     this.members.push(valor)
+//   }
+// }
+
+// Group.from = function(arreglo) {
+//   let grupo = new Group();
+
+//   for(let i = 0; i < arreglo.length; i++) {
+//     grupo.add(arreglo[i])
+//   }
+
+//   return grupo;
+// }
+
+// let group = Group.from([1, 2, 3, 4, 5]);
+// console.log(group); // Group { members: [ 1, 2, 3, 4, 5 ] }
+// console.log(group.has(5)); // true
+// console.log(group.has(10)); // false
+
+// group.add(12);
+// console.log(group.has(12)); // true
+
+// let Persona = function(name, birthYear, job) {
+//   this.name = name;
+//   this.birthYear = birthYear;
+//   this.job = job;
+// }
+
+// Persona.prototype.calculateAge = function() {
+//   let today = new Date();
+//   let year = today.getFullYear()
+
+//   console.log(year -this.birthYear)
+// }
+
+// let juan = new Persona('Juan', 1990, 'Developer')
+// let pedro = new Persona('Pedro', 1985, 'Contador')
+// let daniel = new Persona('Daniel', 1960, 'MAestro')
+
+// juan.calculateAge();
+// pedro.calculateAge();
+// daniel.calculateAge();
+
+// console.log(juan, pedro, daniel)
+
+// let Triangle = function(a, b, c) {
+//   this.a = a;
+//   this.b = b;
+//   this.c = c;
+// }
+
+// Triangle.prototype.getPerimeter = function() {
+//   return this.a + this.b + this.c;
+// }
+
+// let triangle = new Triangle(5, 2, 3);
+
+// console.log(triangle); // Triangle { a: 1, b: 2, c: 3 }
+// console.log(triangle.getPerimeter()); // 6
