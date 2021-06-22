@@ -534,3 +534,182 @@
 
 // console.log(triangle); // Triangle { a: 1, b: 2, c: 3 }
 // console.log(triangle.getPerimeter()); // 6
+
+
+// Ejercicios sesión 6
+//
+//
+
+// let numbers = [1, 2, 3, 4, 5];
+// // let doubles = [];
+
+// // for(let i = 0; i < numbers.length; i++) {
+// // 	doubles.push(numbers[i] * 2);
+// // }
+
+// let doubles = numbers.map(number => number * 2)
+
+
+// console.log(numbers); // [1, 2, 3, 4, 5]
+// console.log(doubles); // [2, 4, 6, 8, 10]
+
+// let car = {
+//   brand: 'Nissan',
+//   model: 'Sentra',
+//   year: 2020
+// }
+
+
+// console.log('Antes de agregar color: ', car);
+
+// function addColor(automovil) {
+//   let nuevoCarro = Object.assign({}, automovil, {
+//     color: 'Negro'
+//   })
+
+//   return nuevoCarro;
+// }
+
+// let mismoCarro = addColor(car);
+
+// console.log('eeste es el nuevo auto', mismoCarro)
+// console.log('Es el mismo carro?, ', car === mismoCarro)
+
+// let conejo = {
+//   orejas: 2,
+//   color: 'blanco',
+//   tamaño: 'mediano',
+//   herbivoro: true
+// }
+
+// console.log('Objeto que describe al conejo ', conejo)
+
+// function agregarOrden(animal) {
+//   return {...animal, mamifero: true}
+// }
+
+// let conejoModificado = agregarOrden(conejo);
+
+// console.log('nuevo conejo ', conejoModificado)
+// console.log('son iguales?? ', conejo === conejoModificado)
+
+// let cart = [
+//   {
+//     item: 'Laptop',
+//     quantity: 1
+//   }
+// ]
+
+// function addItemToCart(cart, item, quantity) {
+//   let newCart = cart.map(element => element)
+
+//   newCart.push({
+//     item: item,
+//     quantity: quantity
+//   })
+
+//   return newCart;
+// }
+
+// cart = addItemToCart(cart, 'Phone', 1);
+// console.log('segundo cart, ', cart);
+
+// cart = addItemToCart(cart, 'Book', 2);
+// console.log('tercer cart, ', cart);
+
+// const suma = function(a, b) {
+//   return a + b;
+// }
+
+// const promedio = suma(a, b) / 2;
+
+
+
+let numbers = [1, 2, 3, 4, 5];
+// let doubles = numbers.map(number => number * 2)
+
+// let numerosImpares = numbers.filter(number => number % 2 !== 0)
+// let numerosPares = numbers.filter(function(number) {
+//   return number % 2 === 0;
+// })
+// let numerosMayoresATres = numbers.filter(number => number > 3)
+
+
+// console.log(numbers); // [1, 2, 3, 4, 5]
+// // console.log(doubles); // [2, 4, 6, 8, 10]
+// console.log(numerosImpares);
+// console.log(numerosPares);
+// console.log(numerosMayoresATres);
+
+// let suma = numbers.reduce(function(acumulador, valorActual) {
+//   return acumulador + valorActual;
+// }, 0)
+
+// console.log(suma)
+
+// let number = 12345;
+
+// // let string = number.toString(); // '12345'
+
+// // let array = string.split(''); // ['1', '2', '3', '4', '5']
+
+// let array = number.toString().split(''); // ['1', '2', '3', '4', '5']
+
+// let arrayOfNumbers = array.map(function(number) {
+//   return Number(number)
+// })   // [1, 2, 3, 4, 5]
+
+// let suma = arrayOfNumbers.reduce(function(acum, elem) {
+//   return acum + elem;
+// }, 0);
+
+// function sumaDigitos(number) {
+//   return number
+//           .toString()
+//           .split('')
+//           .map(Number)
+//           .reduce(function(acum, elem) {
+//             return acum + elem;
+//           }, 0)
+// };
+
+// console.log('suma: ', sumaDigitos(number));
+
+// function flatten(arrays) {
+//   return arrays.reduce(function(acum, elem){
+//     return acum.concat(elem);
+//   }, []);
+// }
+
+// let arrays = [[1, 2, 3], [4, 5], [6]];
+// let array = flatten(arrays);
+
+// console.log(array); // [1, 2, 3, 4, 5, 6]
+
+// function compact(array) {
+//   return array.filter(elem => !!elem)
+// }
+
+// let array = [0, 1, false, 2, '', 3];
+// let compactedArray = compact(array);
+
+// console.log(compactedArray); // [1, 2, 3]
+
+function loop(start, test, update, body) {
+  for(let value = start; test(value); value = update(value)){
+    body(value)
+  }
+}
+
+let test = function(n) {
+  return n > 0;
+}
+
+let update = function(n) {
+  return n - 1;
+}
+
+loop(3, test, update, console.log);
+// 3
+// 2
+// 1
